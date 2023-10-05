@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: khaki;
+}
+
+.presentacion img{
+    width: 45px;
+    margin-right: 20px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: salmon;
+}
+
+.contenedor{
+    padding-top: 25px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    background: none;
+}
+
+.tabla{
+    border-collapse: collapse;
+    margin: 0 10px;
+    display: inline-table;
+    box-shadow: 0 0 10px 0 rgba(255, 248, 114, 0.8);
+    border-radius: 9px;
+    flex: 25%;
+}
+
+.tabla td, .tabla th {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    -webkit-text-stroke: 0.5px #00a000;
+    color: rgb(255, 255, 255);
+}
+
+.tabla tr:last-child th {
+    border-bottom: none;
+}
+
+.tabla td{
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+.tabla td::before{
+    content: "◉";
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.tabla:nth-child(3){
+    position: relative;
+}
+
+.tabla:nth-child(3)::before {
+    content: "Recomendado";
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    top: -14px;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    border-radius: 10px 10px 0 0px;
+}
+
+.boton {
+    display: block;
+    width: 100%;
+    background-color: #47fe3e;
+    color: rgb(17, 0, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.boton:hover {
+    background-color: #cfff3e;
+    transform: scale(1.05);
+}
+
+@media (max-width: 910px){
+    .contenedor{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tabla{
+        margin: 10px 50px;
+    }
+}
+
+@media (max-width: 376px){
+    .presentacion h1{
+        display: none;
+    }
+
+    .tabla{
+        margin: 10px 25px;
+    }
+}
